@@ -1,1 +1,19 @@
-<p>browse works!</p>
+<div class="container">
+
+  <h2 class="text-center">Karasevo Reviews</h2>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let i of items">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ i.title }}</h5>
+          <p class="card-text">{{ i.rating }}</p>
+          <p class="card-text">{{ i.description }}</p>
+          <p class="card-text">{{ i.image }}</p>
+          <button class="btn btn-primary mt-4" (click)="seeReviews()">See Reviews</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
