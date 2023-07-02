@@ -1,1 +1,16 @@
-<p>reviews works!</p>
+<div class="container">
+
+  <h2 class="text-center">{{item.title}}</h2>
+  <button class="btn btn-primary mt-4" (click)="leaveReview()">Leave a Review</button>
+  <div class="row">
+    <div class="col-md-6" *ngFor="let r of reviews">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ r.name }}</h5>
+          <p class="card-text">{{ r.rating }}</p>
+          <p class="card-text">{{ r.feedback }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

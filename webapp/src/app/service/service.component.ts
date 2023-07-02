@@ -20,11 +20,11 @@ export class ServiceComponent {
     return this.http.get<any>(`${this.URL}/items/${id}`)
   }
 
-  postReview(id: number, name: string, review: number, feedback: string){
+  postReview(id: number, name: string, rating: number, feedback: string){
 
     const body = {
       name: name,
-      review: review,
+      rating: rating,
       feedback: feedback
     }
 

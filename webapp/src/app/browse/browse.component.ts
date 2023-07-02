@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 export class BrowseComponent implements OnInit{
 
   items: any[] = [];
-
+  isHovered: boolean = false;
   constructor(private service: ServiceComponent, private router: Router) { }
   ngOnInit() {
     this.getItems();
@@ -22,12 +22,31 @@ export class BrowseComponent implements OnInit{
         this.items = response;
       },
       (error: any) => {
-        console.error('Error fetching browsed items: ', error);
+        alert(error.error);
       }
     );
   }
 
-  seeReviews(){
-    this.router.navigateByUrl("");
+  seeReviews(id: number, title: string){
+    localStorage.setItem('itemId', id.toString());
+    this.router.navigateByUrl(`/${title}`);
+  }
+
+  // STYLING DOWN HERE
+
+  addHoverClass() {
+    this.isHovered = true;
+  }
+
+  removeHoverClass() {
+    this.isHovered = false;
+  }
+
+  getFullStars(rating: number): number[] {
+    return Array(Math.floor(rating)).fill(0);
+  }
+
+  getPartialStarWidth(rating: number): number {
+    return (rating - Math.floor(rating)) * 100;
   }
 }

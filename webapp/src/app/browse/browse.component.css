@@ -1,0 +1,51 @@
+.card.mb-3:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card.mb-3.hovered {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.star-rating {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: gold;
+}
+
+.star-rating .star {
+  position: relative;
+  display: inline-block;
+}
+
+.star-rating .star i {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.star-rating .star i:before {
+  content: '\2605'; /* Unicode character for a star */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.star-rating .star.partial i:before {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.star-rating .star.partial {
+  overflow: hidden;
+}
+
+.star-rating .star.partial i {
+  position: relative;
+  display: inline-block;
+  clip-path: inset(0 calc(100% - 100%) 0 0);
+}
+
+
+
