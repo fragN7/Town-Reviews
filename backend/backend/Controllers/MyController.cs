@@ -1,7 +1,6 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using backend.Model;
+﻿using backend.Model;
 using backend.Repo;
+using backend.Validators;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +11,12 @@ namespace backend.Controllers;
 public class MyController : ControllerBase
 {
     private readonly DatabaseContext _context;
+    private readonly ReviewValidator validator;
 
-    public MyController(DatabaseContext context)
+    public MyController(DatabaseContext context, ReviewValidator validator)
     {
         _context = context;
+        this.validator = validator;
     }
 
     private static ItemDTO ItemToDTO(Item item) => new ItemDTO
@@ -55,6 +56,11 @@ public class MyController : ControllerBase
             throw new Exception("Item not found");
         }
 
+        var reviews = _context.Reviews
+            .Where(x => x.ItemId == id)
+            .Select(x => ReviewToDTO(x))
+            .ToList();
+
         var resultItem = new ItemListDTO
         {
             Id = id,
@@ -62,7 +68,7 @@ public class MyController : ControllerBase
             Title = item.Title,
             Image = item.Image,
             Rating = item.Rating,
-            Reviews = item.Reviews.Select(ReviewToDTO).ToList()
+            Reviews = reviews
         };
 
         return Ok(resultItem);
@@ -70,13 +76,19 @@ public class MyController : ControllerBase
     
     [HttpPost("review/{id}")]
     [AllowAnonymous]
-    public ActionResult ReviewItem(int id, AddReviewDTO review)
+    public ActionResult ReviewItem(int id, [FromBody] AddReviewDTO review)
     {
-        var item = _context.Items.FirstOrDefault(x => x.Id == id);
+        var item = _context.Items.Include(x => x.Reviews).FirstOrDefault(x => x.Id == id);
 
         if (item == null)
         {
             throw new Exception("Item not found");
+        }
+        
+        var errors = this.validator.ValidateReview(review);
+        if (errors != string.Empty)
+        {
+            throw new Exception(errors);
         }
 
         var newReview = new Review
@@ -87,8 +99,15 @@ public class MyController : ControllerBase
             ItemId = id,
             Item = item
         };
-
+        
         _context.Reviews.Add(newReview);
+        _context.SaveChanges();
+        
+        var averageRating = item.Reviews
+            .Where(x => x.ItemId == id)
+            .Average(r => r.Rating);
+
+        item.Rating = averageRating;
         _context.SaveChanges();
 
         return Ok();
