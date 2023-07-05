@@ -1,21 +1,21 @@
-<div class="container">
+<div class="container d-flex flex-column align-items-center">
   <h2 class="text-center">Karasevo Reviews</h2>
   <div class="row">
-    <div class="col-md-6" *ngFor="let i of items">
-      <div class="card mb-3" (click)="seeReviews(i.id, i.title)" (mouseenter)="addHoverClass()" (mouseleave)="removeHoverClass()" [ngClass]="{ 'hovered': isHovered }">
-        <div class="card-body">
+    <div class="col-md-4" *ngFor="let i of items" >
+      <div class="card mb-3 d-flex flex-fill" style="height: 250px;" (click)="seeReviews(i.id, i.title)" (mouseenter)="addHoverClass()" (mouseleave)="removeHoverClass()" [ngClass]="{ 'hovered': isHovered }">
+        <div class="card-body text-center">
+          <img [src]="'assets/' + i.image" [alt]="i.title" class="rounded-circle img-thumbnail" style="width: 100px; height: 100px;">
           <h5 class="card-title">{{ i.title }}</h5>
-          <div class="star-rating">
+          <!--<div class="star-rating">
             <ng-container *ngFor="let _ of getFullStars(i.rating)">
               <i class="fas fa-star"></i>
             </ng-container>
             <div class="star partial" [style.width]="getPartialStarWidth(i.rating) + '%'">
               <i class="fas fa-star"></i>
             </div>
-          </div>
+          </div>-->
           <p class="card-text">{{ i.rating }} / 5</p>
           <p class="card-text">{{ i.description }}</p>
-          <p class="card-text">{{ i.image }}</p>
         </div>
       </div>
     </div>
