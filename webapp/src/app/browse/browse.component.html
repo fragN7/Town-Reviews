@@ -1,23 +1,24 @@
-<div class="container d-flex flex-column align-items-center">
-  <h2 class="text-center">Karasevo Reviews</h2>
+<body class="bg-black">
+<div class="top-right-image">
+  <a href="https://rezidencija-luka.business.site" target="_blank">
+    <img [src]="'assets/rezidencija.png'" alt="Image" class="image">
+  </a>
+</div>
+<div class="container d-flex flex-column align-items-center "> <!-- Apply bg-black to the container -->
+  <h2 class="text-center text-white star-wars-title" style="margin-top: 20px;">KARAŠEVO</h2> <!-- Add margin-top -->
+  <h6 class="text-center text-white star-wars-title" style="margin-bottom: 20px;">reviews</h6>
   <div class="row">
-    <div class="col-md-4" *ngFor="let i of items" >
-      <div class="card mb-3 d-flex flex-fill" style="height: 250px;" (click)="seeReviews(i.id, i.title)" (mouseenter)="addHoverClass()" (mouseleave)="removeHoverClass()" [ngClass]="{ 'hovered': isHovered }">
+    <div class="col-md-4" *ngFor="let i of items">
+      <div class="card mb-3 d-flex flex-fill dark-card zoom-on-hover" style="height: 250px;"
+           (click)="seeReviews(i.id, i.title)">
         <div class="card-body text-center">
           <img [src]="'assets/' + i.image" [alt]="i.title" class="rounded-circle img-thumbnail" style="width: 100px; height: 100px;">
-          <h5 class="card-title">{{ i.title }}</h5>
-          <!--<div class="star-rating">
-            <ng-container *ngFor="let _ of getFullStars(i.rating)">
-              <i class="fas fa-star"></i>
-            </ng-container>
-            <div class="star partial" [style.width]="getPartialStarWidth(i.rating) + '%'">
-              <i class="fas fa-star"></i>
-            </div>
-          </div>-->
-          <p class="card-text">{{ i.rating }} / 5</p>
-          <p class="card-text">{{ i.description }}</p>
+          <h5 class="card-title text-white">{{ i.title }}</h5>
+          <p class="card-text text-white">{{ i.rating }} / 5</p>
+          <p class="card-text text-white">{{ i.description }}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+</body>

@@ -3,7 +3,7 @@
 }
 
 .card.mb-3.hovered {
-  background-color: #f0f0f0;
+  background-color: #804f4f;
   cursor: pointer;
 }
 
@@ -47,5 +47,47 @@
   clip-path: inset(0 calc(100% - 100%) 0 0);
 }
 
+/* styles.scss or styles.css */
+.top-right-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* styles.scss or styles.css */
+.image {
+  width: 315px; /* Adjust the width to make the image smaller */
+  height: 110px; /* Adjust the height accordingly */
+}
 
 
+/* styles.scss or styles.css */
+.star-wars-title {
+  font-size: 48px; /* Adjust the font size to your preference */
+  letter-spacing: 10px; /* Adjust the letter spacing for the Star Wars logo effect */
+  text-transform: uppercase; /* Make the title uppercase */
+  font-weight: bold; /* Make the text bold */
+  font-family: 'Star Jedi', sans-serif; /* Use a Star Wars-like font (you may need to include the font) */
+}
+
+.dark-card {
+  background-color: #000000; /* Dark background color */
+  border: 1px solid white; /* White border */
+  color: white; /* Text color */
+  transition: transform 0.3s ease; /* Add a smooth transition for the transform property */
+}
+
+/* Apply hover effect for dark cards */
+.dark-card.hovered {
+  background-color: #444; /* Dark background color on hover */
+  /* Add any other hover styles as needed */
+}
+
+.zoom-on-hover {
+  transition: transform 0.3s ease; /* Add a smooth transition for the transform property */
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.08); /* Scale the card to 105% of its original size on hover */
+}

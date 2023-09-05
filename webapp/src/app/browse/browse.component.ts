@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './browse.component.html',
   styleUrls: ['./browse.component.css']
 })
+
 export class BrowseComponent implements OnInit{
 
   items: any[] = [];
@@ -34,12 +35,13 @@ export class BrowseComponent implements OnInit{
 
   // STYLING DOWN HERE
 
-  addHoverClass() {
-    this.isHovered = true;
+  addHoverClass(item: any) {
+    item.isHovered = true;
   }
 
-  removeHoverClass() {
-    this.isHovered = false;
+  // Function to remove the "hovered" class when leaving an item
+  removeHoverClass(item: any) {
+    item.isHovered = false;
   }
 
   getFullStars(rating: number): number[] {
