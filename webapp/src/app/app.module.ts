@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { ServiceComponent } from './service/service.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { StarRatingComponent } from './design/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReviewsComponent } from './reviews/reviews.component';
     AddComponent,
     BrowseComponent,
     ServiceComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,

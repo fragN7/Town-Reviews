@@ -1,0 +1,5 @@
+<div class="star-rating">
+  <ng-container *ngFor="let star of starsArray">
+    <i class="fa star-icon" [ngClass]="{'fa-star': star === 'full', 'fa-star-half-o': star === 'half', 'fa-star-o': star === 'empty'}"></i>
+  </ng-container>
+</div>

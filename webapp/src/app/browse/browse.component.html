@@ -14,7 +14,8 @@
         <div class="card-body text-center">
           <img [src]="'assets/' + i.image" [alt]="i.title" class="rounded-circle img-thumbnail" style="width: 100px; height: 100px;">
           <h5 class="card-title text-white">{{ i.title }}</h5>
-          <p class="card-text text-white">{{ i.rating }} / 5</p>
+          <!--<p class="card-text text-white">{{ i.rating }} / 5</p>-->
+          <app-star-rating [rating]="i.rating"></app-star-rating>
           <p class="card-text text-white">{{ i.description }}</p>
         </div>
       </div>
