@@ -107,7 +107,9 @@ public class MyController : ControllerBase
             .Where(x => x.ItemId == id)
             .Average(r => r.Rating);
 
-        item.Rating = averageRating;
+        var rating = Math.Round(averageRating, 2);
+        
+        item.Rating = (float)rating;
         _context.SaveChanges();
 
         return Ok();

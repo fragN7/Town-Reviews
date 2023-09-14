@@ -1,0 +1,16 @@
+/* Custom button style */
+.btn-custom {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover state for the button */
+.btn-custom:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-radius: 10px; /* Optionally, you can adjust the border-radius for sharp corners */
+}
