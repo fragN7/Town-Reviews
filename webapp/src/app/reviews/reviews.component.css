@@ -14,3 +14,20 @@
   border-color: white;
   border-radius: 10px; /* Optionally, you can adjust the border-radius for sharp corners */
 }
+
+.dark-card {
+  background-color: #000000; /* Dark background color */
+  border: 2px solid white; /* White border */
+  color: white; /* Text color */
+  transition: transform 0.3s ease; /* Add a smooth transition for the transform property */
+  border-radius: 12px
+}
+
+/* CSS for the image in the footer */
+.bottom-mid-image img {
+  max-width: 100%; /* Make the image responsive */
+  max-height: 225px;
+  height: auto; /* Maintain the image's aspect ratio */
+  display: block; /* Remove any inline whitespace */
+  margin: 0 auto; /* Center the image horizontally within its container */
+}
