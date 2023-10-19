@@ -1,4 +1,4 @@
-# TownReviews (In progress) [Link](https://karasevo-reviews.netlify.app/)
+# [TownReviews](https://karasevo-reviews.netlify.app/) (In progress) 
 
 Fun Random Web App where you can leave reviews based on random things, also you can request random things to be reviewed.
 ### TODO 
