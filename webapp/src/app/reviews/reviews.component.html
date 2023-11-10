@@ -1,16 +1,16 @@
 <html class="bg-black">
-  <body class="bg-black">
-
+<body class="bg-black">
+<div class="container-fluid">
   <div class="card-body text-center">
     <div class="row align-items-center">
       <div class="col-md-4 text-center">
-        <img [src]="'assets/' + item.image" [alt]="item.title" class="rounded-circle img-thumbnail" style="width: 175px; height: 175px; margin-left: 500px; margin-top: 50px;">
+        <img [src]="'assets/' + item.image" [alt]="item.title" class="rounded-circle img-thumbnail" style="width: 175px; height: 175px; margin-left: 300px;"> <!-- Adjust margin-left as needed -->
       </div>
       <div class="col-md-4">
         <div class="text-center">
           <h1 class="card-title text-white" style="margin-top: 100px; font-size: 56px; font-weight: 700;">{{ item.title }}</h1>
-          <p class="card-text text-white" style="margin-left: 186px;">{{ item.description }}</p>
-          <div class="d-flex align-items-center justify-content-center justify-content-md-start" style="margin-left: 190px;">
+          <p class="card-text text-white">{{ item.description }}</p>
+          <div class="d-flex align-items-center justify-content-center justify-content-md-start" style="margin-left: 164px;"> <!-- Adjust margin-left as needed -->
             <app-star-rating [rating]="item.rating"></app-star-rating>
             <p class="card-text text-black">""</p>
             <p class="card-text text-white ml-4">{{ item.rating }} / 5</p>
@@ -21,13 +21,16 @@
     </div>
   </div>
 
-  <div class="row justify-content-center text-center" style="margin-top: 50px">
-    <div class="col-md-3" *ngFor="let r of reviews">
-      <div class="card mb-3 d-flex flex-fill bg-black text-white" style="width: 300px; height: 190px;"> <!-- Adjust width and height as needed -->
-        <div class="card-body dark-card">
-          <h5 class="card-title text-white">{{ r.name }}</h5>
-          <app-star-rating [rating]="r.rating"></app-star-rating>
-          <p class="card-text text-white">{{ r.feedback }}</p>
+  <div class="row justify-content-center text-center" style="margin-top: 50px; margin-left: 150px; margin-right: 150px">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let r of reviews">
+        <div class="card mb-3 d-flex flex-fill bg-black text-white" style="height: 150px;">
+          <!-- Adjust width and height as needed -->
+          <div class="card-body dark-card">
+            <h5 class="card-title text-white">{{ r.name }}</h5>
+            <app-star-rating [rating]="r.rating"></app-star-rating>
+            <p class="card-text text-white">{{ r.feedback }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -36,10 +39,10 @@
   <div class="footer">
     <div class="bottom-mid-image">
       <a href="https://rezidencija-luka.business.site" target="_blank">
-        <img [src]="'assets/rezidencija.png'" alt="Image" class="image">
+        <img [src]="'assets/rezidencija.png'" alt="Image" class="image" style="margin-left: 275px;"> <!-- Adjust margin-left as needed -->
       </a>
     </div>
   </div>
-
-  </body>
+</div>
+</body>
 </html>

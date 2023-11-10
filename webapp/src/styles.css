@@ -5,3 +5,39 @@ body, html {
   color: white;
   font-family: "Times New Roman", sans-serif;
 }
+
+/* styles.css */
+
+/* Add your custom scrollbar styles */
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #ddd;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #ddd;
+}

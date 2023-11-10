@@ -23,11 +23,24 @@
   border-radius: 12px
 }
 
+/* CSS for the footer */
+.footer {
+  background-color: #000; /* Background color for the footer */
+  text-align: center; /* Center align the content in the footer */
+  padding: 20px; /* Add padding for spacing */
+}
+
+/* CSS for the image container in the footer */
+.bottom-mid-image {
+  max-width: 80%; /* Add a maximum width to the container */
+  margin: 0 auto; /* Center the container horizontally within its parent */
+}
+
 /* CSS for the image in the footer */
 .bottom-mid-image img {
   max-width: 100%; /* Make the image responsive */
   max-height: 225px;
   height: auto; /* Maintain the image's aspect ratio */
   display: block; /* Remove any inline whitespace */
-  margin: 0 auto; /* Center the image horizontally within its container */
+  margin: 10px auto; /* Add margin for spacing around the image and center it horizontally */
 }
