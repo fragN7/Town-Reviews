@@ -1,0 +1,45 @@
+/* Change placeholder color */
+.black-textbox::placeholder {
+  color: #999; /* Change to the desired color */
+}
+
+/* Increase the size of form elements */
+.form-control-lg {
+  font-size: 18px;
+  padding: 14px 16px;
+}
+
+/* Customize the text box */
+.black-textbox {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+.btn-custom {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover state for the button */
+.btn-custom:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: white;
+  border-radius: 10px; /* Optionally, you can adjust the border-radius for sharp corners */
+}
+
+/* Add rounded corners and hover effect to the link */
+.nav-link {
+  border-radius: 5px; /* Adjust the radius to your preference */
+  transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  padding: 8px 12px; /* Adjust padding as needed */
+}
+
+.nav-link:hover {
+  background-color: #3b3b3b; /* Change to your desired grey color */
+  border-radius: 10px; /* Adjust the radius on hover */
+}

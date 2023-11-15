@@ -1,29 +1,32 @@
-<div class="container">
-  <h1 class="my-5">Leave a Review</h1>
-  <hr>
-  <form name="myForm" (ngSubmit)="postReview()" #addForm="ngForm">
-    <div class="form-group">
-      <label>Name:</label>
-      <input type="text" class="form-control" name="name" required [(ngModel)]="this.item.name">
+<div class="container d-flex flex-column align-items-center">
+  <h1 class="my-5">Mani jedan review</h1>
+
+  <form name="myForm" (ngSubmit)="postReview()" #addForm="ngForm" >
+
+    <div class="form-group" style="margin-top: 40px">
+      <input type="text" class="form-control form-control-lg black-textbox" placeholder="Ime..." name="name" required [(ngModel)]="this.item.name">
     </div>
-    <div class="form-group">
-      <label>Rating:</label>
-      <input type="number" class="form-control" name="rating" required [(ngModel)]="this.item.rating">
+
+    <div class="form-group" style="margin-top: 25px;">
+      <textarea class="form-control form-control-lg black-textbox" name="feedback" rows="5" placeholder="Tvoj feedback..." required [(ngModel)]="this.item.feedback"></textarea>
     </div>
-    <div class="form-group">
-      <label>Review:</label>
-      <input type="text" class="form-control" name="feedback" required [(ngModel)]="this.item.feedback">
+
+    <div class="form-group" style="margin-top: 40px;margin-left: 80px">
+      <app-star-rating [rating]="0"></app-star-rating>
     </div>
-    <button type="submit" class="btn btn-primary my-3">Post Review</button>
+
+    <button type="submit" class="btn btn-custom mt-4" style="margin-top: 40px;margin-left: 60px">Postiraj Review</button>
   </form>
-  <hr>
+
+
   <div class="my-5">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/">Watch other items</a>
+          <a class="nav-link" routerLink="/">Glidej na druge stvari</a>
         </li>
       </ul>
     </nav>
   </div>
+
 </div>

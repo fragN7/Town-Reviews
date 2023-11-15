@@ -31,4 +31,8 @@ export class AddComponent implements OnInit{
       }
     );
   }
+
+  setRating(rating: number) {
+    this.item.rating = rating;
+  }
 }
